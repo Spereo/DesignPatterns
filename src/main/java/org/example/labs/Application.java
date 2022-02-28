@@ -1,9 +1,10 @@
-package org.example.labs.lab1;
+package org.example.labs;
 
 import org.example.labs.lab1.Builder.BuilderService;
 import org.example.labs.lab1.Singleton.SingletonService;
 import org.example.labs.lab1.FactoryMethod.FactoryMethodService;
 import org.example.labs.lab1.AbstractFactory.AbstractFactoryService;
+import org.example.labs.lab2.Adapter.AdapterService;
 
 import java.util.Scanner;
 
@@ -26,6 +27,10 @@ public class Application {
             case (4):
                 BuilderService builderService = new BuilderService();
                 builderService.execute();
+                break;
+            case (5):
+                AdapterService adapterService = new AdapterService();
+                adapterService.execute();
                 break;
             default:
                 System.out.println("Incorrect number");
