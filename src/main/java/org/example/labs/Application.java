@@ -5,6 +5,7 @@ import org.example.labs.lab1.Singleton.SingletonService;
 import org.example.labs.lab1.FactoryMethod.FactoryMethodService;
 import org.example.labs.lab1.AbstractFactory.AbstractFactoryService;
 import org.example.labs.lab2.Adapter.AdapterService;
+import org.example.labs.lab2.Bridge.BridgeService;
 
 import java.util.Scanner;
 
@@ -31,6 +32,10 @@ public class Application {
             case (5):
                 AdapterService adapterService = new AdapterService();
                 adapterService.execute();
+                break;
+            case (6):
+                BridgeService bridgeService = new BridgeService();
+                bridgeService.execute();
                 break;
             default:
                 System.out.println("Incorrect number");
