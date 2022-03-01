@@ -6,6 +6,7 @@ import org.example.labs.lab1.FactoryMethod.FactoryMethodService;
 import org.example.labs.lab1.AbstractFactory.AbstractFactoryService;
 import org.example.labs.lab2.Adapter.AdapterService;
 import org.example.labs.lab2.Bridge.BridgeService;
+import org.example.labs.lab2.Proxy.ProxyService;
 
 import java.util.Scanner;
 
@@ -36,6 +37,10 @@ public class Application {
             case (6):
                 BridgeService bridgeService = new BridgeService();
                 bridgeService.execute();
+                break;
+            case (7):
+                ProxyService proxyService = new ProxyService();
+                proxyService.execute();
                 break;
             default:
                 System.out.println("Incorrect number");
