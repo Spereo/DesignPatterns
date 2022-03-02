@@ -7,7 +7,14 @@ import org.example.labs.lab1.AbstractFactory.AbstractFactoryService;
 import org.example.labs.lab2.Adapter.AdapterService;
 import org.example.labs.lab2.Bridge.BridgeService;
 import org.example.labs.lab2.Proxy.ProxyService;
+import org.example.labs.lab3.ChainOfResponsibility.ChainService;
+import org.example.labs.lab3.Iterator.IteratorService;
+import org.example.labs.lab3.Strategy.CommaSeparatedStrategy;
+import org.example.labs.lab3.Strategy.SemicolonSeparatedStrategy;
+import org.example.labs.lab3.Strategy.StrategyServiceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Application {
@@ -41,6 +48,26 @@ public class Application {
             case (7):
                 ProxyService proxyService = new ProxyService();
                 proxyService.execute();
+                break;
+            case (8):
+                List<String> list = new ArrayList<String>();
+                list.add("Мама"); list.add("мыла"); list.add("раму"); list.add("рама"); list.add("мыла"); list.add("маму");
+
+                CommaSeparatedStrategy commaSeparatedStrategy = new CommaSeparatedStrategy();
+                StrategyServiceImpl strategyServiceCommaSeparatedStrategy = new StrategyServiceImpl(commaSeparatedStrategy);
+                strategyServiceCommaSeparatedStrategy.execute(list);
+
+                SemicolonSeparatedStrategy semicolonSeparatedStrategy = new SemicolonSeparatedStrategy();
+                StrategyServiceImpl strategyServiceSemicolonSeparatedStrategy = new StrategyServiceImpl(semicolonSeparatedStrategy);
+                strategyServiceSemicolonSeparatedStrategy.execute(list);
+                break;
+            case (9):
+                ChainService chainService = new ChainService();
+                chainService.execute();
+                break;
+            case (10):
+                IteratorService iteratorService = new IteratorService();
+                iteratorService.execute();
                 break;
             default:
                 System.out.println("Incorrect number");
