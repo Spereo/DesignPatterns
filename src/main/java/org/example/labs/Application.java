@@ -63,7 +63,8 @@ public class Application {
                 break;
             case (9):
                 ChainService chainService = new ChainService();
-                chainService.execute();
+                String inputStream = "method:GET\npath:/user/info\nsession:hello-world-session";
+                chainService.execute(inputStream);
                 break;
             case (10):
                 IteratorService iteratorService = new IteratorService();
