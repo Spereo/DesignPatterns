@@ -1,11 +1,6 @@
 package org.example.labs.lab3.Iterator;
 
-import java.util.List;
-
 public class IteratorService {
-    private List<Item> items;
-    private ItemType itemType;
-
     public void execute() {
         TreasureChest chest = new TreasureChest();
         for (ItemType itemType : ItemType.values()) {

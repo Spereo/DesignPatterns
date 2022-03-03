@@ -25,6 +25,7 @@ public class Application {
             case (1):
                 SingletonService singletonService = new SingletonService();
                 singletonService.execute();
+                break;
             case (2):
                 FactoryMethodService factoryMethodService = new FactoryMethodService();
                 factoryMethodService.execute();
@@ -50,7 +51,7 @@ public class Application {
                 proxyService.execute();
                 break;
             case (8):
-                List<String> list = new ArrayList<String>();
+                List<String> list = new ArrayList<>();
                 list.add("Мама"); list.add("мыла"); list.add("раму"); list.add("рама"); list.add("мыла"); list.add("маму");
 
                 CommaSeparatedStrategy commaSeparatedStrategy = new CommaSeparatedStrategy();

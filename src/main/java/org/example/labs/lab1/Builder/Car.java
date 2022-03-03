@@ -36,12 +36,13 @@ class Car {
     public void setFuel(double fuel) { this.fuel = fuel; }
 
     public String toString(Car car) {
-        String result = "Car type: " + car.getCarType() +
+        return "Car type: " + car.getCarType() +
                 "\nSeats: " + car.getSeats() +
-                "\nCar Engine: " + "volume: " + car.getEngine().getVolume() + "\tmileage: " + car.getEngine().getMileage() +
+                "\nCar Engine: " + "volume: " + car.getEngine().getVolume() +
+                    "\tmileage: " + car.getEngine().getMileage() +
                 "\nCar Transmission: " + car.getTransmission() +
-                "\nCar TripComputer: " + "fuel level: " + car.getFuel() + "\tstatus: " + (car.getEngine().isStarted() ? "Car is started" : "Car is not started") +
+                "\nCar TripComputer: " + "fuel level: " + car.getFuel() +
+                    "\tstatus: " + (car.getEngine().isStarted() ? "Car is started" : "Car is not started") +
                 "\nCar GpsNavigator: " + car.gpsNavigator().getRoute() + "\n";
-        return result;
     }
 }

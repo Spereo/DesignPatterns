@@ -20,7 +20,6 @@ public class ChainService {
         handler.next(new MethodChainHandler())
                 .next(new PathChainHandler())
                 .next(new SessionChainHandler());
-
         handler.process(request);
 
         return request;

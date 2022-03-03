@@ -8,21 +8,18 @@ public class FactoryMethodService {
 
         Dialog dialog;
         switch (configuration.getPlatform()) {
-            case (Configuration.WEB):
-                dialog = new WebDialog();
-                break;
-            case (Configuration.MOB):
-                dialog = new MobDialog();
-                break;
-            default:
+            case (Configuration.WEB) -> dialog = new WebDialog();
+            case (Configuration.MOB) -> dialog = new MobDialog();
+            default -> {
                 dialog = null;
                 try {
                     throw new Exception("Platform type is not declared");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                break;
+            }
         }
+        assert dialog != null;
         dialog.render();
     }
 }
