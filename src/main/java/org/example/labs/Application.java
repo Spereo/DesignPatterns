@@ -1,6 +1,7 @@
 package org.example.labs;
 
 import org.example.labs.lab1.Builder.BuilderService;
+import org.example.labs.lab1.FactoryMethod.Configuration;
 import org.example.labs.lab1.Singleton.SingletonService;
 import org.example.labs.lab1.FactoryMethod.FactoryMethodService;
 import org.example.labs.lab1.AbstractFactory.AbstractFactoryService;
@@ -28,7 +29,8 @@ public class Application {
                 break;
             case (2):
                 FactoryMethodService factoryMethodService = new FactoryMethodService();
-                factoryMethodService.execute();
+                Configuration configuration = new Configuration().initMob();
+                System.out.println(factoryMethodService.execute(configuration));
                 break;
             case (3):
                 AbstractFactoryService abstractFactoryService = new AbstractFactoryService();
@@ -56,16 +58,16 @@ public class Application {
 
                 CommaSeparatedStrategy commaSeparatedStrategy = new CommaSeparatedStrategy();
                 StrategyServiceImpl strategyServiceCommaSeparatedStrategy = new StrategyServiceImpl(commaSeparatedStrategy);
-                strategyServiceCommaSeparatedStrategy.execute(list);
+                System.out.println(strategyServiceCommaSeparatedStrategy.execute(list));
 
                 SemicolonSeparatedStrategy semicolonSeparatedStrategy = new SemicolonSeparatedStrategy();
                 StrategyServiceImpl strategyServiceSemicolonSeparatedStrategy = new StrategyServiceImpl(semicolonSeparatedStrategy);
-                strategyServiceSemicolonSeparatedStrategy.execute(list);
+                System.out.println(strategyServiceSemicolonSeparatedStrategy.execute(list));
                 break;
             case (9):
                 ChainService chainService = new ChainService();
                 String inputStream = "method:GET\npath:/user/info\nsession:hello-world-session";
-                chainService.execute(inputStream);
+                System.out.println(chainService.execute(inputStream));
                 break;
             case (10):
                 IteratorService iteratorService = new IteratorService();

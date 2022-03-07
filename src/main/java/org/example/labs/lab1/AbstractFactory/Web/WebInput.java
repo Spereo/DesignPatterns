@@ -13,7 +13,7 @@ public class WebInput implements Input {
         return value;
     }
 
-    public void render() {
-        System.out.println(String.format("render WebInput with value %s", value));
+    public String render() {
+        return(String.format("render WebInput with value %s", value));
     }
 }

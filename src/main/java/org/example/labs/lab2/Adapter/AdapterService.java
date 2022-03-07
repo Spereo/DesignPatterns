@@ -10,7 +10,6 @@ public class AdapterService {
 
         SquareStick smallSquareStick = new SquareStick(5);
         SquareStick largeSquareStick = new SquareStick(10);
-
         SquareStickAdapter smallSquareStickAdapter = new SquareStickAdapter(smallSquareStick);
         SquareStickAdapter largeSquareStickAdapter = new SquareStickAdapter(largeSquareStick);
 

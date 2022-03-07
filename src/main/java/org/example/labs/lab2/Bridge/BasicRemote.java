@@ -3,36 +3,35 @@ package org.example.labs.lab2.Bridge;
 public class BasicRemote implements Remote {
     protected Device device;
 
+    //конструктор
     public BasicRemote() {}
-
+    //конструктор
     public BasicRemote(Device device) { this.device = device; }
 
-    public void power() {
-        System.out.println("Remote: power toggle");
+    public String power() {
         if(device.isEnabled()) {
             device.disable();
-        } else {
-            device.enable();
-        }
+        } else { device.enable(); }
+        return "Remote: power toggle";
     }
 
-    public void volumeDown() {
-        System.out.println("Remote: volume down");
+    public String volumeDown() {
         device.setVolume(device.getVolume() - 10);
+        return "Remote: volume down";
     }
 
-    public void volumeUp() {
-        System.out.println("Remote: volume up");
+    public String volumeUp() {
         device.setVolume(device.getVolume() + 10);
+        return "Remote: volume up";
     }
 
-    public void channelDown() {
-        System.out.println("Remote: channel down");
+    public String channelDown() {
         device.setChannel(device.getChannel() - 1);
+        return "Remote: channel down";
     }
 
-    public void channelUp() {
-        System.out.println("Remote: channel up");
+    public String channelUp() {
         device.setChannel(device.getChannel() + 1);
+        return "Remote: channel up";
     }
 }

@@ -4,8 +4,9 @@ import org.example.labs.lab1.AbstractFactory.Mob.MobFormElementFactory;
 import org.example.labs.lab1.AbstractFactory.Web.WebFormElementFactory;
 
 public class AbstractFactoryService {
-    private FormElementFactory initFactory() {
-        Configuration configuration = Configuration.initMob();
+    private Configuration configuration;
+    public FormElementFactory initFactory(Configuration config) {
+        configuration = config;
         //Чтобы изменить реализацию фабрики с Web платформы на Mod платформу,
         //необходимо и достаточно изменить вызываемый метод класса Configuration
         //с initWeb на initMob
@@ -40,6 +41,6 @@ public class AbstractFactoryService {
     }
 
     public void execute() {
-        renderForm(initFactory());
+        renderForm(initFactory(configuration));
     }
 }

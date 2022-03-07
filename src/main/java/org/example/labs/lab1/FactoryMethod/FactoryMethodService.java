@@ -1,8 +1,8 @@
 package org.example.labs.lab1.FactoryMethod;
 
 public class FactoryMethodService {
-    public void execute() {
-        Configuration configuration = Configuration.initMob();
+    public String execute(Configuration config) {
+        Configuration configuration = config;
         //Чтобы получить вывод в консоль render MobButton, необходимо и достаточно
         //вызвать метод initMob класса Configuration вместо initWeb
 
@@ -20,6 +20,6 @@ public class FactoryMethodService {
             }
         }
         assert dialog != null;
-        dialog.render();
+        return dialog.render();
     }
 }

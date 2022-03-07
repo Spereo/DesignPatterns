@@ -1,7 +1,7 @@
 package org.example.labs.lab2.Bridge;
 
 class Radio implements Device {
-    private boolean on = true;
+    private boolean on = false;
     private int volume = 30;
     private int channel = 1;
 
@@ -27,12 +27,12 @@ class Radio implements Device {
         this.channel = channel;
     }
 
-    public void printStatus() {
-        System.out.println("------------------------------------");
-        System.out.println("| This is radio.");
-        System.out.println("| Radio is " + (on ? "enabled" : "disabled"));
-        System.out.println("| Current volume is " + volume + "%");
-        System.out.println("| Current channel is " + channel);
-        System.out.println("------------------------------------\n");
+    public String getStatus() {
+        return "------------------------------------" + "\n"
+                + "| This is radio." + "\n"
+                + "| Radio is " + (on ? "enabled" : "disabled") + "\n"
+                + "| Current volume is " + volume + "%" + "\n"
+                + "| Current channel is " + channel + "\n"
+                + "------------------------------------" + "\n";
     }
 }

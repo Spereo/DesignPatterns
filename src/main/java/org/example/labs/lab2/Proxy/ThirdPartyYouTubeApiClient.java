@@ -25,7 +25,7 @@ public class ThirdPartyYouTubeApiClient implements YouTubeApiClient {
     private HashMap<String, Video> getRandomVideos() {
         System.out.println("Downloading populars...");
 
-        HashMap<String, Video> hmap = new HashMap<String, Video>();
+        HashMap<String, Video> hmap = new HashMap<>();
         hmap.put("catzzzzzzzzz", new Video("sadgahasgdas", "Catzzzz.avi"));
         hmap.put("mkafksangasj", new Video("mkafksangasj", "Dog play with ball.mp4"));
         hmap.put("dancesvideoo", new Video("asdfas3ffasd", "Dancing video.mpq"));

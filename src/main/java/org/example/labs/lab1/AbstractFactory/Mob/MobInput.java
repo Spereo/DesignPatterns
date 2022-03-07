@@ -13,7 +13,7 @@ public class MobInput implements Input {
         return value;
     }
 
-    public void render() {
-        System.out.println(String.format("render MobInput with value %s", value));
+    public String render() {
+        return(String.format("render MobInput with value %s", value));
     }
 }

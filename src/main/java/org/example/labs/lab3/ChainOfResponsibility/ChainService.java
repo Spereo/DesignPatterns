@@ -3,13 +3,13 @@ package org.example.labs.lab3.ChainOfResponsibility;
 public class ChainService {
     String inputStream;
 
-    public void execute(String inputStream) {
+    public String execute(String inputStream) {
         this.inputStream = inputStream;
         Request request = getRequest();
         String result = "Method: " + request.getMethod()
                     + "\nPath: " + request.getPath()
                     + "\nSession: " + request.getSession() + "\n";
-        System.out.println(result);
+        return result;
     }
 
     private Request getRequest() {

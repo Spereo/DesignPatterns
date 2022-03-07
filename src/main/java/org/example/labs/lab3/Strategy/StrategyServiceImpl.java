@@ -9,12 +9,12 @@ public class StrategyServiceImpl implements StrategyService {
 
     public StrategyServiceImpl(@NotNull Strategy strategy) { this.strategy = strategy; }
 
-    public void execute(@NotNull List<String> strings) {
+    public String execute(@NotNull List<String> strings) {
         String result = "";
         if(strings.isEmpty()) {
-            System.out.println(result);
+            return result;
         }
-        System.out.println(strategy.process(strings));
+        return strategy.process(strings);
     }
 
     public StrategyService setStrategy(@NotNull Strategy strategy) {

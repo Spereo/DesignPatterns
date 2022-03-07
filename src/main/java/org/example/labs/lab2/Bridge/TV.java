@@ -27,12 +27,12 @@ public class TV implements Device {
         this.channel = channel;
     }
 
-    public void printStatus() {
-        System.out.println("------------------------------------");
-        System.out.println("| This is TV set.");
-        System.out.println("| TV set is " + (on ? "enabled" : "disabled"));
-        System.out.println("| Current volume is " + volume + "%");
-        System.out.println("| Current channel is " + channel);
-        System.out.println("------------------------------------\n");
+    public String getStatus() {
+        return "------------------------------------" + "\n"
+                + "| This is TV set." + "\n"
+                + "| TV set is " + (on ? "enabled" : "disabled") + "\n"
+                + "| Current volume is " + volume + "%" + "\n"
+                + "| Current channel is " + channel + "\n"
+                + "------------------------------------" + "\n";
     }
 }

@@ -8,5 +8,5 @@ public interface Device {
     void setVolume(int percent);
     int getChannel();
     void setChannel(int channel);
-    void printStatus();
+    String getStatus();
 }
