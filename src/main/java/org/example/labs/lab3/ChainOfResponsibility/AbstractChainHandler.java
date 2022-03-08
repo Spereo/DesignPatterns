@@ -14,16 +14,9 @@ public abstract class AbstractChainHandler implements ChainHandler {
         return chainHandler;
     }
 
-    private void validate(@NotNull Request request) {
-        if(Objects.isNull(request)) {
-            throw new RuntimeException("Request must not be null");
-        }
-    }
-
     abstract void handle(@NotNull Request request);
 
     public void process(@NotNull Request request) {
-        validate(request);
         handle(request);
         if(Objects.nonNull(next())) {
             next().process(request);

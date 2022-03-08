@@ -1,5 +1,7 @@
 package org.example.labs.lab3.Iterator;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 
 public class TestIterator {
@@ -13,7 +15,7 @@ public class TestIterator {
     @Test
     public void testChest() {
         TreasureChestItemIterator iterator = new TreasureChestItemIterator(new TreasureChest(), ItemType.POTION);
-        assertEquals(true, iterator.hasNext());
+        assertTrue(iterator.hasNext());
         Item item = iterator.next();
         assertEquals("Potion of courage", item.toString());
     }

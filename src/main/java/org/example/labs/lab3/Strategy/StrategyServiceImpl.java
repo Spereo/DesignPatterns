@@ -11,9 +11,9 @@ public class StrategyServiceImpl implements StrategyService {
 
     public String execute(@NotNull List<String> strings) {
         String result = "";
-        if(strings.isEmpty()) {
-            return result;
-        }
+        //if(strings.isEmpty()) {
+            //return result;
+        //}
         return strategy.process(strings);
     }
 

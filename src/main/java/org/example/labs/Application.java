@@ -13,6 +13,7 @@ import org.example.labs.lab3.Iterator.IteratorService;
 import org.example.labs.lab3.Strategy.CommaSeparatedStrategy;
 import org.example.labs.lab3.Strategy.SemicolonSeparatedStrategy;
 import org.example.labs.lab3.Strategy.StrategyServiceImpl;
+import org.example.labs.lab6.DatabaseService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +73,10 @@ public class Application {
             case (10):
                 IteratorService iteratorService = new IteratorService();
                 iteratorService.execute();
+                break;
+            case (11):
+                DatabaseService service = new DatabaseService();
+                service.execute();
                 break;
             default:
                 System.out.println("Incorrect number");
