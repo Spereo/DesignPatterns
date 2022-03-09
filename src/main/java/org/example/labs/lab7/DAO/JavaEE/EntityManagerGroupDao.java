@@ -11,7 +11,7 @@ import java.util.List;
 public class EntityManagerGroupDao implements GroupDao {
     private final SessionFactory sessionFactory;
 
-    EntityManagerGroupDao(SessionFactory sessionFactory) {
+    public EntityManagerGroupDao(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 

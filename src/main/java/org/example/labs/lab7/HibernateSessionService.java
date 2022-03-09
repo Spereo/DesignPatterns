@@ -1,8 +1,11 @@
 package org.example.labs.lab7;
 
 import org.example.labs.lab7.Configuration.HibernateConfiguration;
+import org.example.labs.lab7.DAO.GroupDao;
+import org.example.labs.lab7.DAO.JavaEE.EntityManagerGroupDao;
 import org.example.labs.lab7.DAO.JavaEE.EntityManagerStudentDao;
 import org.example.labs.lab7.DAO.ORM.SessionGroupDao;
+import org.example.labs.lab7.DAO.ORM.SessionStudentDao;
 import org.example.labs.lab7.DAO.StudentDao;
 import org.example.labs.lab7.Entity.Group;
 import org.example.labs.lab7.Entity.Student;
@@ -15,14 +18,15 @@ import java.util.List;
 public class HibernateSessionService {
     private static final Logger LOGGER = LoggerFactory.getLogger(HibernateSessionService.class);
 
-    private final SessionGroupDao groupDao;
+    private final GroupDao groupDao;
     private final StudentDao studentDao;
 
     public HibernateSessionService() {
         SessionFactory sessionFactory = HibernateConfiguration.getFactory();
-        //studentDao = new SessionStudentDao(sessionFactory);
-        studentDao = new EntityManagerStudentDao(sessionFactory);
+        studentDao = new SessionStudentDao(sessionFactory);
+        //studentDao = new EntityManagerStudentDao(sessionFactory);
         groupDao = new SessionGroupDao(sessionFactory);
+        //groupDao = new EntityManagerGroupDao(sessionFactory);
     }
 
     public void execute() {
